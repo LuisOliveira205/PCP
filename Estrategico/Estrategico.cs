@@ -19,6 +19,39 @@ namespace Estrategico
         public string email;
         private string senha;
 
+        public void cadastrarEstrategico()
+{
+    Console.WriteLine("Escreva seu Email")
+    email = Console.Readline()
+    Console.WriteLine("Crie uma Senha");
+    senha = Console.ReadLine();
+    Console.WriteLine("Digite seu Cpf");
+    cpf = Console.ReadLine();
+
+    if (email = null || senha = null || cpf = null)
+    {
+        Console.WriteLine("Um ou mais campos vazios, tente denovo")
+    }
+
+    cadEstrategico(email, senha, cpf);
+    Console.WriteLine("Cadastrado com sucesso!");
+}
+
+public void loginEstrategia()
+{
+    Console.WriteLine("Digite seu email");
+    email = Console.ReadLine();
+    Console.WriteLine("Digite sua senha");
+    senha = Console.ReadLine();
+
+    if (email = null || senha = null)
+    {
+        Console.WriteLine("Um ou mais campos vazios, tente denovo")
+    }
+
+    logEstrategico(email, senha);
+}
+
         public void objetivoEmpresa(string objetivo)
         {
             Console.WriteLine("Qual será os objetivos da empresa?");
