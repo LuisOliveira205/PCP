@@ -15,6 +15,7 @@ create table estrategicos (
   data_nascimento date,
   email_es varchar(100),
   senha_es varchar (50),
+  cpf_es char (14),
   objetivo_es varchar (500),
   estrategia_es varchar (500),
   equipamentos_es varchar (500),
