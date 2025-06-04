@@ -152,19 +152,19 @@ namespace Banco_Arquivo
             }
         }
 
-        public bool Cadastrar(string nome, string email, string senha)
+                public bool cadEstrategico(string email, string senha, string cpf)
         {
-            using (var conn = new MySqlConnection(conexao))
+            using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 try
                 {
                     conn.Open();
 
-                    string checkQuery = "SELECT COUNT(*) FROM usuarios WHERE email = @Email";
+                    string checkQuery = "select count (*) from estrategicos where email_es = @email_es";
 
-                    using (var checkCmd = new MySqlCommand(checkQuery, conn))
+                    using (MySqlConnection checkCmd = new MySqlCommand(checkQuery, conn))
                     {
-                        checkCmd.Parameters.AddWithValue("@Email", email);
+                        checkCmd.Parameters.AddWithValue("@email_es", email);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
                         if (count > 0)
@@ -174,13 +174,13 @@ namespace Banco_Arquivo
                         }
                     }
 
-                    string query = "INSERT INTO usuarios (nome, email, senha) VALUES (@Nome, @Email, @Senha)";
+                    string query = "insert into estrategicos (email_es, senha_es, cpf_es) values (@email_es, @senha_es, @cpf_es)";
 
-                    using (var cmd = new MySqlCommand(query, conn))
+                    using (MySqlConnection cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Nome", nome);
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Senha", senha);
+                        cmd.Parameters.AddWithValue("@email_es", email);
+                        cmd.Parameters.AddWithValue("@senha_es", senha);
+                        cmd.Parameters.AddWithValue("@cpf_es", cpf);
 
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
@@ -194,26 +194,26 @@ namespace Banco_Arquivo
             }
         }
 
-        public bool Login(string email, string senha)
+        public bool logEstrategico(string email, string senha)
         {
-            using (var conn = new MySqlConnection(conexao))
+            using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 try
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM usuarios WHERE email = @Email AND senha = @Senha";
+                    string query = "select * from estrategicos where email_es = @email_es and senha_es = @senha_es";
 
-                    using (var cmd = new MySqlCommand(query, conn))
+                    using (MySqlConnection cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Senha", senha); // ideal: comparar hash
+                        cmd.Parameters.AddWithValue("@email_es", email);
+                        cmd.Parameters.AddWithValue("@senha_es", senha);
 
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                Console.WriteLine("Login bem-sucedido. Bem-vindo, " + reader["nome"]);
+                                Console.WriteLine("Login bem-sucedido. Bem-vindo");
                                 return true;
                             }
                             else
