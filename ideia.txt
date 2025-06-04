@@ -1,0 +1,82 @@
+Ideia: sistema PCP (Planejamento e Controle de Produção)
+
+
+PCP é um sistema de gestão que visa organizar e otimizar os processos produtivos de uma indústria, garantindo que a produção ocorra de forma eficiente, com os recursos certos, nos prazos e custos definidos.
+
+é divido em três hierarquias: Estratégico - Tático - Operacional
+
+Estratégico: atua tomando decisões de longo prazo que impactam diretamente o futuro da empresa. Em vez de lidar com tarefas do dia a dia ou do curto prazo, ela foca em planejamento de capacidade, estrutura produtiva, investimentos e alinhamento com os objetivos do negócio.
+
+Tático: transforma os objetivos estratégicos em planos concretos de médio prazo. Aqui, o foco é programar e coordenar a produção dentro de períodos que variam de semanas a meses, garantindo que os recursos estejam disponíveis e bem alocados para cumprir as metas estabelecidas no plano estratégico.
+
+Operacional: responsável por executar as decisões e planos definidos nos níveis estratégico e tático, focando na produção de curto prazo
+
+
+
+
+LOGIN
+
+assim que o programa abrir terá uma tela para cadastrar o funcionario, onde ele ira colocar o seus dados e qual nivel hierarquico ele pertence
+
+
+
+
+OPÇÕES DO NÍVEL ESTRATÉGICO
+
+1 - Definir objetivos de longo prazo: Os objetivos estratégicos da empresa (como crescimento de market share, sustentabilidade, inovação ou expansão) são definidos para orientar a direção da produção, operações e demais áreas da empresa.
+
+2 - Desenvolver a estratégia de produção: Com base nos objetivos da empresa, a estratégia de produção é formulada. Isso inclui decisões sobre quais produtos ou serviços a empresa vai oferecer, quais mercados vai atender, quais tecnologias utilizará e como organizará suas operações de maneira competitiva.
+
+3 - Orçamento de capital e investimentos: Ele toma decisões sobre investimentos em novos equipamentos, expansão da capacidade produtiva, ou aquisição de novas instalações, considerando as necessidades futuras da produção.
+
+4 - Gestão de portfólio de produtos:  Definem-se quais produtos ou linhas de produção serão priorizados ou descontinuados, além da diversificação de portfólio para minimizar riscos e explorar novas oportunidades de mercado.
+
+5 - Escolha de locais de produção: O nível estratégico decide onde as unidades de produção devem ser localizadas, levando em consideração fatores como proximidade com o mercado, custo de mão de obra, infraestrutura disponível e logística.
+ 
+6 - Acompanhamento do desempenho global: O nível estratégico monitora os indicadores de desempenho globais da empresa, como lucro, participação de mercado, satisfação do cliente e inovação. A partir disso, toma decisões para ajustar a estratégia conforme necessário.
+
+7 - Relações com investidores, fornecedores e clientes: O nível estratégico gerencia as principais relações com stakeholders externos, como investidores, fornecedores e clientes chave, para garantir alinhamento com as expectativas de todos e maximizar os resultados de longo prazo.
+
+
+
+
+OPÇÕES DO NÍVEL TÁTICO
+
+1 - Planejamento de Produção de Médio Prazo
+
+Desenvolver planos de produção: Criar planos que cubram o médio prazo (geralmente de 3 a 12 meses), levando em consideração a capacidade produtiva, a demanda de mercado, os recursos disponíveis e os objetivos estratégicos da empresa.
+
+Definição de lotes e cronograma de produção: Planejar o tamanho dos lotes, os ciclos de produção e os cronogramas para garantir que a produção aconteça de acordo com a capacidade e as metas de entrega.
+
+2 - Gestão da Capacidade Produtiva
+
+Análise de capacidade: Avaliar se a capacidade produtiva atual da empresa é suficiente para atender à demanda prevista, levando em conta recursos como mão de obra, maquinário, instalações e matérias-primas.
+
+Ajustes de capacidade: Caso haja defasagem entre a capacidade planejada e a capacidade necessária, o nível tático propõe ajustes, como a contratação de novos colaboradores, aquisição de novas máquinas ou terceirização de processos.
+
+3 - Planejamento de materiais (MRP): O nível tático coordena o uso de sistemas de Planejamento de Necessidades de Materiais (MRP - Material Requirements Planning) para garantir que os materiais necessários para a produção estejam disponíveis no momento certo, evitando tanto a falta quanto o excesso de estoque.
+
+4 - Revisão de processos: Caso algum processo da produção não esteja funcionando como o esperado ou não esteja atingindo as metas estabelecidas, o nível tático é responsável por ajustar processos, definir novos métodos de trabalho ou até realizar melhorias no layout da produção.
+
+5- Monitoramento de Desempenho
+
+Indicadores de performance (KPIs): O nível tático monitora indicadores de performance como a eficiência da produção, tempo de setup, custo de produção, taxas de rejeição e outros dados para garantir que os resultados estejam alinhados com o planejado.
+
+Análise de desvios: Quando os resultados não são alcançados, o nível tático realiza a análise de causas e propõe ações corretivas para minimizar os impactos nos prazos e custos.
+
+6 - Programação de manutenções preventivas e corretivas: Para garantir que a produção siga sem interrupções, o nível tático gerencia a programação de manutenções de equipamentos e máquinas, evitando paradas imprevistas que possam comprometer a produção.
+
+
+
+
+OPÇÕES DO NÍVEL OPERACIONAL
+
+1 - Execução de ordens de produção: acompanha e organiza as ordens de produção, garantindo que os materiais e recursos estejam disponíveis e que a produção seja feita de acordo com os planos estabelecidos.
+
+2 - Controle de estoques: Monitorar e controlar os estoques de matéria-prima, produtos em processo e produtos acabados para evitar excessos ou faltas
+
+3 - Monitoramento da linha de produção: Acompanhamento contínuo do andamento das atividades produtivas, verificando possíveis problemas que possam ocorrer e tentando corrigir ou reportar falhas para que não impactem a produção.
+
+4 - Gestão da mão de obra: Organizar e alocar os trabalhadores de forma eficiente nas diferentes fases da produção, com base nas necessidades do momento.
+
+5 - Ajustes e correções: Se houver algum desvio em relação ao planejado, o nível operacional precisa tomar as providências para minimizar os impactos. Isso pode envolver ajuste nas máquinas, reorganização da produção ou até a troca de matérias-primas.

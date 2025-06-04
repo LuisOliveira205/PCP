@@ -1,0 +1,14 @@
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\obj\Debug\Banco_Arquivo.csproj.AssemblyReference.cache
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\obj\Debug\Banco_Arquivo.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\Banco_Arquivo.exe.config
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\Banco_Arquivo.exe
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\Banco_Arquivo.pdb
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\MySql.Data.dll
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\System.Memory.dll
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\System.Buffers.dll
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\bin\Debug\MySql.Data.xml
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\obj\Debug\Banco_Ar.CD037607.Up2Date
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\obj\Debug\Banco_Arquivo.exe
+C:\Users\aluno\Desktop\C#\Banco_Arquivo\obj\Debug\Banco_Arquivo.pdb
