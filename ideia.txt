@@ -42,30 +42,17 @@ OPÇÕES DO NÍVEL ESTRATÉGICO
 
 OPÇÕES DO NÍVEL TÁTICO
 
-1 - Planejamento de Produção de Médio Prazo
+1 - Desenvolver planos de produção: Criar planos que cubram o médio prazo (geralmente de 3 a 12 meses), levando em consideração a capacidade produtiva, a demanda de mercado, os recursos disponíveis e os objetivos estratégicos da empresa.
 
-Desenvolver planos de produção: Criar planos que cubram o médio prazo (geralmente de 3 a 12 meses), levando em consideração a capacidade produtiva, a demanda de mercado, os recursos disponíveis e os objetivos estratégicos da empresa.
+2 - Definição de lotes e cronograma de produção: Planejar o tamanho dos lotes, os ciclos de produção e os cronogramas para garantir que a produção aconteça de acordo com a capacidade e as metas de entrega.
 
-Definição de lotes e cronograma de produção: Planejar o tamanho dos lotes, os ciclos de produção e os cronogramas para garantir que a produção aconteça de acordo com a capacidade e as metas de entrega.
+3 - Ajustes de capacidade: Caso haja defasagem entre a capacidade planejada e a capacidade necessária, o nível tático propõe ajustes, como a contratação de novos colaboradores, aquisição de novas máquinas ou terceirização de processos.
 
-2 - Gestão da Capacidade Produtiva
+4 - Planejamento de materiais (MRP): O nível tático coordena o uso de sistemas de Planejamento de Necessidades de Materiais (MRP - Material Requirements Planning) para garantir que os materiais necessários para a produção estejam disponíveis no momento certo, evitando tanto a falta quanto o excesso de estoque.
 
-Análise de capacidade: Avaliar se a capacidade produtiva atual da empresa é suficiente para atender à demanda prevista, levando em conta recursos como mão de obra, maquinário, instalações e matérias-primas.
+5 - Revisão de processos: Caso algum processo da produção não esteja funcionando como o esperado ou não esteja atingindo as metas estabelecidas, o nível tático é responsável por ajustar processos, definir novos métodos de trabalho ou até realizar melhorias no layout da produção.
 
-Ajustes de capacidade: Caso haja defasagem entre a capacidade planejada e a capacidade necessária, o nível tático propõe ajustes, como a contratação de novos colaboradores, aquisição de novas máquinas ou terceirização de processos.
-
-3 - Planejamento de materiais (MRP): O nível tático coordena o uso de sistemas de Planejamento de Necessidades de Materiais (MRP - Material Requirements Planning) para garantir que os materiais necessários para a produção estejam disponíveis no momento certo, evitando tanto a falta quanto o excesso de estoque.
-
-4 - Revisão de processos: Caso algum processo da produção não esteja funcionando como o esperado ou não esteja atingindo as metas estabelecidas, o nível tático é responsável por ajustar processos, definir novos métodos de trabalho ou até realizar melhorias no layout da produção.
-
-5- Monitoramento de Desempenho
-
-Indicadores de performance (KPIs): O nível tático monitora indicadores de performance como a eficiência da produção, tempo de setup, custo de produção, taxas de rejeição e outros dados para garantir que os resultados estejam alinhados com o planejado.
-
-Análise de desvios: Quando os resultados não são alcançados, o nível tático realiza a análise de causas e propõe ações corretivas para minimizar os impactos nos prazos e custos.
-
-6 - Programação de manutenções preventivas e corretivas: Para garantir que a produção siga sem interrupções, o nível tático gerencia a programação de manutenções de equipamentos e máquinas, evitando paradas imprevistas que possam comprometer a produção.
-
+6- Análise de desvios: Quando os resultados não são alcançados, o nível tático realiza a análise de causas e propõe ações corretivas para minimizar os impactos nos prazos e custos.
 
 
 
