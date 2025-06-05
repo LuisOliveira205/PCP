@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using Banco.PCP;
 
 namespace Estrategico
 {
@@ -18,21 +20,16 @@ namespace Estrategico
         public DateTime nascimento;
         public string email;
         private string senha;
+        public string cpf;
 
         public void cadastrarEstrategico()
 {
     Console.WriteLine("Escreva seu Email")
-    email = Console.Readline()
+    email = Console.ReadLine();
     Console.WriteLine("Crie uma Senha");
     senha = Console.ReadLine();
     Console.WriteLine("Digite seu Cpf");
     cpf = Console.ReadLine();
-
-    if (email = null || senha = null || cpf = null)
-    {
-        Console.WriteLine("Um ou mais campos vazios, tente denovo")
-    }
-
     cadEstrategico(email, senha, cpf);
     Console.WriteLine("Cadastrado com sucesso!");
 }
@@ -43,12 +40,6 @@ public void loginEstrategia()
     email = Console.ReadLine();
     Console.WriteLine("Digite sua senha");
     senha = Console.ReadLine();
-
-    if (email = null || senha = null)
-    {
-        Console.WriteLine("Um ou mais campos vazios, tente denovo")
-    }
-
     logEstrategico(email, senha);
 }
 
