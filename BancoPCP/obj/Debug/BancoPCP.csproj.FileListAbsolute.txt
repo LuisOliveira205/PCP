@@ -1,0 +1,8 @@
+C:\Users\Pedro\source\repos\BancoPCP\bin\Debug\BancoPCP.dll
+C:\Users\Pedro\source\repos\BancoPCP\bin\Debug\BancoPCP.pdb
+C:\Users\Pedro\source\repos\BancoPCP\bin\Debug\MySql.Data.xml
+C:\Users\Pedro\source\repos\BancoPCP\obj\Debug\BancoPCP.csproj.AssemblyReference.cache
+C:\Users\Pedro\source\repos\BancoPCP\obj\Debug\BancoPCP.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\source\repos\BancoPCP\obj\Debug\BancoPCP.csproj.Up2Date
+C:\Users\Pedro\source\repos\BancoPCP\obj\Debug\BancoPCP.dll
+C:\Users\Pedro\source\repos\BancoPCP\obj\Debug\BancoPCP.pdb
