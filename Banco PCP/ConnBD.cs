@@ -1,4 +1,8 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace Banco_Arquivo
@@ -14,13 +18,10 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
-                    string query = "insert into estrategicos (objetivo_es) values (@objetivo_es)";
-
+                    string query = "INSERT INTO estrategicos (objetivo_es) VALUES (@objetivo_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@objetivo_es", objetivo);
-
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -38,13 +39,10 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
-                    string query = "insert into estrategicos (estrategia_es) values (@estrategia_es)";
-
+                    string query = "INSERT INTO estrategicos (estrategia_es) VALUES (@estrategia_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@objetivo_es", estrategia);
-
+                        cmd.Parameters.AddWithValue("@estrategia_es", estrategia);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -62,14 +60,13 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
-                    string query = "insert into estrategicos (equipamentos_es, trabalhadores_es, materiais_es) values (@equipamentos_es, @trabalhadores_es, @materiais_es)";
-
+                    string query = "INSERT INTO estrategicos (equipamentos_es, trabalhadores_es, materiais_es) VALUES (@equipamentos_es, @trabalhadores_es, @materiais_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@equipamentos_es", equipamentos);
                         cmd.Parameters.AddWithValue("@trabalhadores_es", trabalhadores);
                         cmd.Parameters.AddWithValue("@materiais_es", materiais);
+                        cmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
@@ -86,13 +83,10 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
                     string query = "INSERT INTO estrategicos (portifolio_es) VALUES (@portifolio_es)";
-
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@portifolio_es", portifolio);
-
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -110,14 +104,10 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
                     string query = "INSERT INTO estrategicos (local_es) VALUES (@local_es)";
-
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-
                         cmd.Parameters.AddWithValue("@local_es", local);
-
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -135,13 +125,10 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
                     string query = "INSERT INTO estrategicos (relacoes_es) VALUES (@relacoes_es)";
-
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@relacoes_es", relacoes);
-
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -152,7 +139,7 @@ namespace Banco_Arquivo
             }
         }
 
-                public bool cadEstrategico(string email, string senha, string cpf)
+        public bool cadEstrategico(string email, string senha, string cpf)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -160,9 +147,8 @@ namespace Banco_Arquivo
                 {
                     conn.Open();
 
-                    string checkQuery = "select count (*) from estrategicos where email_es = @email_es";
-
-                    using (MySqlConnection checkCmd = new MySqlCommand(checkQuery, conn))
+                    string checkQuery = "SELECT COUNT(*) FROM estrategicos WHERE email_es = @email_es";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
                     {
                         checkCmd.Parameters.AddWithValue("@email_es", email);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
@@ -174,14 +160,12 @@ namespace Banco_Arquivo
                         }
                     }
 
-                    string query = "insert into estrategicos (email_es, senha_es, cpf_es) values (@email_es, @senha_es, @cpf_es)";
-
-                    using (MySqlConnection cmd = new MySqlCommand(query, conn))
+                    string insertQuery = "INSERT INTO estrategicos (email_es, senha_es, cpf_es) VALUES (@email_es, @senha_es, @cpf_es)";
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_es", email);
                         cmd.Parameters.AddWithValue("@senha_es", senha);
                         cmd.Parameters.AddWithValue("@cpf_es", cpf);
-
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
@@ -201,10 +185,8 @@ namespace Banco_Arquivo
                 try
                 {
                     conn.Open();
-
-                    string query = "select * from estrategicos where email_es = @email_es and senha_es = @senha_es";
-
-                    using (MySqlConnection cmd = new MySqlCommand(query, conn))
+                    string query = "SELECT * FROM estrategicos WHERE email_es = @email_es AND senha_es = @senha_es";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_es", email);
                         cmd.Parameters.AddWithValue("@senha_es", senha);
@@ -213,7 +195,7 @@ namespace Banco_Arquivo
                         {
                             if (reader.Read())
                             {
-                                Console.WriteLine("Login bem-sucedido. Bem-vindo");
+                                Console.WriteLine("Login bem-sucedido. Bem-vindo!");
                                 return true;
                             }
                             else
