@@ -1,0 +1,15 @@
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\Estrategico.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\Estrategico.pdb
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\BancoPCP.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\MySql.Data.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\System.Buffers.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\System.Memory.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\BancoPCP.pdb
+C:\Users\Pedro\source\repos\Estrategico\bin\Debug\MySql.Data.xml
+C:\Users\Pedro\source\repos\Estrategico\obj\Debug\Estrategico.csproj.AssemblyReference.cache
+C:\Users\Pedro\source\repos\Estrategico\obj\Debug\Estrategico.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\source\repos\Estrategico\obj\Debug\Estrateg.6E0652FE.Up2Date
+C:\Users\Pedro\source\repos\Estrategico\obj\Debug\Estrategico.dll
+C:\Users\Pedro\source\repos\Estrategico\obj\Debug\Estrategico.pdb
