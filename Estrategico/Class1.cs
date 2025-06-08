@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,12 +89,9 @@ namespace Estrategico
             Console.WriteLine("Local registrado com sucesso!");
         }
 
-        public void relacoesExternas(string relacoes)
+        public void visualizarInfoOperacional()
         {
-            Console.WriteLine("Descreva as principais relações com stakeholders (investidores, fornecedores, clientes)");
-            relacoes = Console.ReadLine();
-            conn.bancoRelacoes(relacoes);
-            Console.WriteLine("Relações registradas com sucesso!");
+            conn.mostrarOrdensProducao();
         }
     }
 }
