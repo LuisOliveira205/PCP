@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,28 +71,17 @@ namespace Tatico
             Console.WriteLine("Ajuste de capacidade registrado com sucesso!");
         }
 
-        public void materiaisEmpresa(string materiais)
-        {
-            Console.WriteLine("Descreva o planejamento de materiais");
-            materiais = Console.ReadLine();
-            conn.bancoMateriais (materiais);
-            Console.WriteLine("Planejamento registrado com sucesso!");
-        }
-
-        public void processosEmpresa(string processo)
-        {
-            Console.WriteLine("Descreva a revisão de processo ou melhoria necessária");
-            processo = Console.ReadLine();
-            conn.bancoProcesso(processo);
-            Console.WriteLine("Revisão registrada com sucesso!");
-        }
-
         public void desviosEmpresa(string desvios)
         {
             Console.WriteLine("Descreva os desvios identificados");
             desvios = Console.ReadLine();
             conn.bancoDesvios(desvios);
             Console.WriteLine("Desvios registrados com sucesso!");
+        }
+
+        public void visualizarInfoOperacional()
+        {
+            conn.mostrarOrdensProducao();
         }
     }
 }
