@@ -1,0 +1,15 @@
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\Operacional.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\Operacional.pdb
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\BancoPCP.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\MySql.Data.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\System.Buffers.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\System.Memory.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\BancoPCP.pdb
+C:\Users\Pedro\source\repos\Operacional\bin\Debug\MySql.Data.xml
+C:\Users\Pedro\source\repos\Operacional\obj\Debug\Operacional.csproj.AssemblyReference.cache
+C:\Users\Pedro\source\repos\Operacional\obj\Debug\Operacional.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\source\repos\Operacional\obj\Debug\Operacio.FC8C903A.Up2Date
+C:\Users\Pedro\source\repos\Operacional\obj\Debug\Operacional.dll
+C:\Users\Pedro\source\repos\Operacional\obj\Debug\Operacional.pdb
