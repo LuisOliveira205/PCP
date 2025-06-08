@@ -13,14 +13,6 @@ Operacional: responsável por executar as decisões e planos definidos nos níve
 
 
 
-
-LOGIN
-
-assim que o programa abrir terá uma tela para cadastrar o funcionario, onde ele ira colocar o seus dados e qual nivel hierarquico ele pertence
-
-
-
-
 OPÇÕES DO NÍVEL ESTRATÉGICO
 
 1 - Definir objetivos de longo prazo: Os objetivos estratégicos da empresa (como crescimento de market share, sustentabilidade, inovação ou expansão) são definidos para orientar a direção da produção, operações e demais áreas da empresa.
@@ -32,11 +24,6 @@ OPÇÕES DO NÍVEL ESTRATÉGICO
 4 - Gestão de portfólio de produtos:  Definem-se quais produtos ou linhas de produção serão priorizados ou descontinuados, além da diversificação de portfólio para minimizar riscos e explorar novas oportunidades de mercado.
 
 5 - Escolha de locais de produção: O nível estratégico decide onde as unidades de produção devem ser localizadas, levando em consideração fatores como proximidade com o mercado, custo de mão de obra, infraestrutura disponível e logística.
- 
-6 - Acompanhamento do desempenho global: O nível estratégico monitora os indicadores de desempenho globais da empresa, como lucro, participação de mercado, satisfação do cliente e inovação. A partir disso, toma decisões para ajustar a estratégia conforme necessário.
-
-7 - Relações com investidores, fornecedores e clientes: O nível estratégico gerencia as principais relações com stakeholders externos, como investidores, fornecedores e clientes chave, para garantir alinhamento com as expectativas de todos e maximizar os resultados de longo prazo.
-
 
 
 
@@ -48,11 +35,7 @@ OPÇÕES DO NÍVEL TÁTICO
 
 3 - Ajustes de capacidade: Caso haja defasagem entre a capacidade planejada e a capacidade necessária, o nível tático propõe ajustes, como a contratação de novos colaboradores, aquisição de novas máquinas ou terceirização de processos.
 
-4 - Planejamento de materiais (MRP): O nível tático coordena o uso de sistemas de Planejamento de Necessidades de Materiais (MRP - Material Requirements Planning) para garantir que os materiais necessários para a produção estejam disponíveis no momento certo, evitando tanto a falta quanto o excesso de estoque.
-
-5 - Revisão de processos: Caso algum processo da produção não esteja funcionando como o esperado ou não esteja atingindo as metas estabelecidas, o nível tático é responsável por ajustar processos, definir novos métodos de trabalho ou até realizar melhorias no layout da produção.
-
-6- Análise de desvios: Quando os resultados não são alcançados, o nível tático realiza a análise de causas e propõe ações corretivas para minimizar os impactos nos prazos e custos.
+4 - Análise de desvios: Quando os resultados não são alcançados, o nível tático realiza a análise de causas e propõe ações corretivas para minimizar os impactos nos prazos e custos.
 
 
 
@@ -60,10 +43,8 @@ OPÇÕES DO NÍVEL OPERACIONAL
 
 1 - Execução de ordens de produção: acompanha e organiza as ordens de produção, garantindo que os materiais e recursos estejam disponíveis e que a produção seja feita de acordo com os planos estabelecidos.
 
-2 - Controle de estoques: Monitorar e controlar os estoques de matéria-prima, produtos em processo e produtos acabados para evitar excessos ou faltas
+2 - Reportar progresso do projeto: Enviar para os superiores o estado do projeto, descrevendo o avanço feito, os recursos utilizados e o quão proximo está da conclusão.
 
-3 - Monitoramento da linha de produção: Acompanhamento contínuo do andamento das atividades produtivas, verificando possíveis problemas que possam ocorrer e tentando corrigir ou reportar falhas para que não impactem a produção.
+3 - Gestão da mão de obra: Organizar e alocar os trabalhadores de forma eficiente nas diferentes fases da produção, com base nas necessidades do momento.
 
-4 - Gestão da mão de obra: Organizar e alocar os trabalhadores de forma eficiente nas diferentes fases da produção, com base nas necessidades do momento.
-
-5 - Ajustes e correções: Se houver algum desvio em relação ao planejado, o nível operacional precisa tomar as providências para minimizar os impactos. Isso pode envolver ajuste nas máquinas, reorganização da produção ou até a troca de matérias-primas.
+4 - Ajustes e correções: Se houver algum desvio em relação ao planejado, o nível operacional precisa tomar as providências para minimizar os impactos. Isso pode envolver ajuste nas máquinas, reorganização da produção ou até a troca de matérias-primas.
