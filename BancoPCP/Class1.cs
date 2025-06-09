@@ -21,7 +21,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into estrategicos (objetivo_es) values (@objetivo_es)";
+                    string query = "insert into funcao_es (objetivo_es) values (@objetivo_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@objetivo_es", objetivo);
@@ -42,7 +42,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into estrategicos (estrategia_es) values (@estrategia_es)";
+                    string query = "insert into funcao_es (estrategia_es) values (@estrategia_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@estrategia_es", estrategia);
@@ -63,7 +63,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into estrategicos (equipamentos_es, trabalhadores_es) values (@equipamentos_es, @trabalhadores_es)";
+                    string query = "insert into funcao_es (equipamentos_es, trabalhadores_es) values (@equipamentos_es, @trabalhadores_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@equipamentos_es", equipamentos);
@@ -85,7 +85,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into estrategicos (portifolio_es) values (@portifolio_es)";
+                    string query = "insert into funcao_es (portifolio_es) values (@portifolio_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@portifolio_es", portifolio);
@@ -106,7 +106,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into estrategicos (local_es) values (@local_es)";
+                    string query = "insert into funcao_es (local_es) values (@local_es)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@local_es", local);
@@ -120,7 +120,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadEstrategico(string email, string senha, string cpf)
+        public bool cadEstrategico(string email, string senha, string cpf int experiencia decimal salario)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -139,14 +139,16 @@ namespace BancoPCP
                             Console.WriteLine("Email já cadastrado.");
                             return false;
                         }
-                    }
+                    }     
 
-                    string insertQuery = "insert into estrategicos (email_es, senha_es, cpf_es) values (@email_es, @senha_es, @cpf_es)";
+                    string insertQuery = "insert into estrategicos (email_es, senha_es, cpf_es, experiencia_es, salario_es) values (@email_es, @senha_es, @cpf_es, @experiencia_es, @salario_es)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_es", email);
                         cmd.Parameters.AddWithValue("@senha_es", senha);
                         cmd.Parameters.AddWithValue("@cpf_es", cpf);
+                        cmd.Parameters.AddWithValue("@experiencia_es", experiencia);
+                        cmd.Parameters.AddWithValue("@salario_es", salario);
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
@@ -204,7 +206,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into taticos (plano_ta) values (@plano_ta)";
+                    string query = "insert into funcao_ta (plano_ta) values (@plano_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@plano_ta", plano);
@@ -225,7 +227,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into taticos (lotes_ta, cronograma_ta) values (@lotes_ta, @cronograma_ta)";
+                    string query = "insert into funcao_ta (lotes_ta, cronograma_ta) values (@lotes_ta, @cronograma_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@lotes_ta", lotes);
@@ -247,7 +249,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into taticos (ajuste_ta) values (@ajuste_ta)";
+                    string query = "insert into funcao_ta (ajuste_ta) values (@ajuste_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ajuste_ta", ajuste);
@@ -268,7 +270,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into taticos (desvios_ta) values (@desvios_ta)";
+                    string query = "insert into funcao_ta (desvios_ta) values (@desvios_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@desvios_ta", desvios);
@@ -282,7 +284,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadTatico(string email, string senha, string cpf)
+        public bool cadTatico(string email, string senha, string cpf, int experiencia, decimal salario)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -303,12 +305,15 @@ namespace BancoPCP
                         }
                     }
 
-                    string insertQuery = "insert into taticos (email_ta, senha_ta, cpf_ta) values (@email_ta, @senha_ta, @cpf_ta)";
+                    string insertQuery = "insert into taticos (email_ta, senha_ta, cpf_ta, experiencia_ta, salario_ta) values (@email_ta, @senha_ta, @cpf_ta, @experiencia_ta, @salario_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_ta", email);
                         cmd.Parameters.AddWithValue("@senha_ta", senha);
                         cmd.Parameters.AddWithValue("@cpf_ta", cpf);
+                        cmd.Parameters.AddWithValue("@experiencia_ta", experiencia);
+                        cmd.Parameters.AddWithValue("@salario_ta", salario);
+
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
@@ -320,6 +325,7 @@ namespace BancoPCP
                 }
             }
         }
+
 
         public bool logTatico(string email, string senha)
         {
@@ -366,7 +372,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into operacionais (ordem_op) values (@ordem_op)";
+                    string query = "insert into funcao_op (ordem_op) values (@ordem_op)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ordem_op", ordem);
@@ -387,7 +393,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into operacionais (progresso_op) values (@progresso_op)";
+                    string query = "insert into funcao_op (progresso_op) values (@progresso_op)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@progresso_op", progresso);
@@ -408,7 +414,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into operacionais (mao_obra_op) values (@mao_obra_op)";
+                    string query = "insert into funcao_op (mao_obra_op) values (@mao_obra_op)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@mao_obra_op", alocacao);
@@ -429,7 +435,7 @@ namespace BancoPCP
                 try
                 {
                     conn.Open();
-                    string query = "insert into operacionais (ajustes_op) values (@ajustes_op)";
+                    string query = "insert into funcao_op (ajustes_op) values (@ajustes_op)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ajustes_op", ajustes);
@@ -443,7 +449,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadOperacional(string email, string senha, string cpf)
+        public bool cadOperacional(string email, string senha, string cpf, int experiencia, decimal salario)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -464,12 +470,15 @@ namespace BancoPCP
                         }
                     }
 
-                    string insertQuery = "insert into operacionais (email_op, senha_op, cpf_op) values (@email_op, @senha_op, @cpf_op)";
+                    string insertQuery = "insert into operacionais (email_op, senha_op, cpf_op, experiencia_op, salario_op) values (@email_op, @senha_op, @cpf_op, @experiencia_op, @salario_op)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_op", email);
                         cmd.Parameters.AddWithValue("@senha_op", senha);
                         cmd.Parameters.AddWithValue("@cpf_op", cpf);
+                        cmd.Parameters.AddWithValue("@experiencia_op", experiencia);
+                        cmd.Parameters.AddWithValue("@salario_op", salario);
+
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
