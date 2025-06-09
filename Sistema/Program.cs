@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -155,10 +155,10 @@ namespace Sistema
             switch (escolha)
             {
                 case "1":
-                    tat.cadastrarEstrategico();
+                    tat.cadastrarTatico();
                     break;
                 case "2":
-                    tat.loginEstrategia();
+                    tat.loginTatico();
                     logado = true;
                     break;
                 default:
