@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +17,7 @@ namespace Operacional
         private string senha;
         public string cpf;
         private decimal salario;
-        public string formação;
-        public string experiencia;
+        public int experiencia;
         public string cargo;
         public bool status;
         public DateTime contratacao;
@@ -32,7 +31,27 @@ namespace Operacional
             senha = Console.ReadLine();
             Console.WriteLine("Digite seu Cpf");
             cpf = Console.ReadLine();
-            conn.cadOperacional(email, senha, cpf);
+            Console.WriteLine("Digite seus anos de experiência");
+            experiencia = int.Parse(Console.ReadLine());
+
+            if (experiencia >= 1 && experiencia <= 3)
+            {
+                salario = 3036;
+            }
+            else if (experiencia >= 4 && experiencia <= 6)
+            {
+                salario = 4554;
+            }
+            else if (experiencia >= 7)
+            {
+                salario = 6072;
+            }
+            else
+            {
+                Console.WriteLine("Ano de experiência inválido.");
+                return;
+            }
+            conn.cadOperacional(email, senha, cpf, experiencia, salario);
             Console.WriteLine("Cadastrado com sucesso!");
         }
 
