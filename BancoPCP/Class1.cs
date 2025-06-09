@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -120,7 +121,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadEstrategico(string email, string senha, string cpf int experiencia decimal salario)
+        public bool cadEstrategico(string email, string senha, string cpf, int experiencia, decimal salario, string estado, string cidade, string rua, DateTime nascimento, DateTime contratacao)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -139,9 +140,9 @@ namespace BancoPCP
                             Console.WriteLine("Email já cadastrado.");
                             return false;
                         }
-                    }     
+                    }
 
-                    string insertQuery = "insert into estrategicos (email_es, senha_es, cpf_es, experiencia_es, salario_es) values (@email_es, @senha_es, @cpf_es, @experiencia_es, @salario_es)";
+                    string insertQuery = "insert into estrategicos (email_es, senha_es, cpf_es, experiencia_es, salario_es, nascimento_es, contratacao_es) values (@email_es, @senha_es, @cpf_es, @experiencia_es, @salario_es, @nascimento_es, @contratacao_es)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_es", email);
@@ -149,8 +150,18 @@ namespace BancoPCP
                         cmd.Parameters.AddWithValue("@cpf_es", cpf);
                         cmd.Parameters.AddWithValue("@experiencia_es", experiencia);
                         cmd.Parameters.AddWithValue("@salario_es", salario);
-                        int result = cmd.ExecuteNonQuery();
-                        return result > 0;
+                        cmd.Parameters.AddWithValue("@nascimento_es", nascimento);
+                        cmd.Parameters.AddWithValue("@contratacao_es", contratacao);
+                        cmd.ExecuteNonQuery();
+                    }
+                    string insertEnderecoQuery = "insert into endereço_estrategicos (estado_es, cidade_es, rua_es) values (@estado_es, @cidade_es, @rua_es)";
+                    using (MySqlCommand cmdEnderecoEs = new MySqlCommand(insertEnderecoQuery, conn))
+                    {
+                        cmdEnderecoEs.Parameters.AddWithValue("@estado_es", estado);
+                        cmdEnderecoEs.Parameters.AddWithValue("@cidade_es", cidade);
+                        cmdEnderecoEs.Parameters.AddWithValue("@rua_es", rua);
+                        cmdEnderecoEs.ExecuteNonQuery();
+                        return true;
                     }
                 }
                 catch (Exception ex)
@@ -284,7 +295,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadTatico(string email, string senha, string cpf, int experiencia, decimal salario)
+        public bool cadTatico(string email, string senha, string cpf, int experiencia, decimal salario, string estado, string cidade, string rua, DateTime nascimento, DateTime contratacao)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -305,7 +316,7 @@ namespace BancoPCP
                         }
                     }
 
-                    string insertQuery = "insert into taticos (email_ta, senha_ta, cpf_ta, experiencia_ta, salario_ta) values (@email_ta, @senha_ta, @cpf_ta, @experiencia_ta, @salario_ta)";
+                    string insertQuery = "insert into taticos (email_ta, senha_ta, cpf_ta, experiencia_ta, salario_ta, nascimento_ta, contratacao_ta) values (@email_ta, @senha_ta, @cpf_ta, @experiencia_ta, @salario_ta, @nascimento_ta, @contratacao_ta)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_ta", email);
@@ -313,9 +324,19 @@ namespace BancoPCP
                         cmd.Parameters.AddWithValue("@cpf_ta", cpf);
                         cmd.Parameters.AddWithValue("@experiencia_ta", experiencia);
                         cmd.Parameters.AddWithValue("@salario_ta", salario);
+                        cmd.Parameters.AddWithValue("@nascimento_ta", nascimento);
+                        cmd.Parameters.AddWithValue("@contratacao_ta", contratacao);
 
                         int result = cmd.ExecuteNonQuery();
-                        return result > 0;
+                    }
+                    string insertTaticoQuery = "insert into endereço_taticos (estado_ta, cidade_ta, rua_ta, cod_ta) values (@estado_ta, @cidade_ta, @rua_ta, @cod_ta)";
+                    using (MySqlCommand cmdEnderecoTa = new MySqlCommand(insertTaticoQuery, conn))
+                    {
+                        cmdEnderecoTa.Parameters.AddWithValue("@estado_ta", estado);
+                        cmdEnderecoTa.Parameters.AddWithValue("@cidade_ta", cidade);
+                        cmdEnderecoTa.Parameters.AddWithValue("@rua_ta", rua);
+                        cmdEnderecoTa.ExecuteNonQuery();
+                        return true;
                     }
                 }
                 catch (Exception ex)
@@ -449,7 +470,7 @@ namespace BancoPCP
             }
         }
 
-        public bool cadOperacional(string email, string senha, string cpf, int experiencia, decimal salario)
+        public bool cadOperacional(string email, string senha, string cpf, int experiencia, decimal salario, string estado, string cidade, string rua, DateTime nascimento, DateTime contratacao)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -470,7 +491,7 @@ namespace BancoPCP
                         }
                     }
 
-                    string insertQuery = "insert into operacionais (email_op, senha_op, cpf_op, experiencia_op, salario_op) values (@email_op, @senha_op, @cpf_op, @experiencia_op, @salario_op)";
+                    string insertQuery = "insert into operacionais (email_op, senha_op, cpf_op, experiencia_op, salario_op, nascimento_op, contratacao_op) values (@email_op, @senha_op, @cpf_op, @experiencia_op, @salario_op, @nascimento_op, @contratacao_op)";
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@email_op", email);
@@ -478,9 +499,18 @@ namespace BancoPCP
                         cmd.Parameters.AddWithValue("@cpf_op", cpf);
                         cmd.Parameters.AddWithValue("@experiencia_op", experiencia);
                         cmd.Parameters.AddWithValue("@salario_op", salario);
-
-                        int result = cmd.ExecuteNonQuery();
-                        return result > 0;
+                        cmd.Parameters.AddWithValue("@nascimento_op", nascimento);
+                        cmd.Parameters.AddWithValue("@contratacao_op", contratacao);
+                        cmd.ExecuteNonQuery();
+                    }
+                    string insertOperacionalQuery = "insert into endereço_operacionais (estado_op, cidade_op, rua_op) values (@estado_op, @cidade_op, @rua_op)";
+                    using (MySqlCommand cmdEnderecoTa = new MySqlCommand(insertOperacionalQuery, conn))
+                    {
+                        cmdEnderecoTa.Parameters.AddWithValue("@estado_op", estado);
+                        cmdEnderecoTa.Parameters.AddWithValue("@cidade_op", cidade);
+                        cmdEnderecoTa.Parameters.AddWithValue("@rua_op", rua);
+                        cmdEnderecoTa.ExecuteNonQuery();
+                        return true;
                     }
                 }
                 catch (Exception ex)
@@ -526,10 +556,6 @@ namespace BancoPCP
                 }
             }
         }
-
-        // Métodos para visualização cruzada
-
-        // Estratégico/Tático podem ver operacional
         public void mostrarOrdensProducao()
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -561,7 +587,6 @@ namespace BancoPCP
             }
         }
 
-        // Operacional pode ver estratégico
         public void mostrarInfoEstrategica()
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -598,7 +623,6 @@ namespace BancoPCP
             }
         }
 
-        // Operacional pode ver tático
         public void mostrarInfoTatica()
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
