@@ -10,19 +10,19 @@ namespace Estrategico
 {
     public class Estrategico
     {
-
         private ConnBD conn = new ConnBD();
 
         public string nome;
         public string email;
         private string senha;
         public string cpf;
+        public string estado;
+        public string cidade;
+        public string rua;
         private decimal salario;
         public int experiencia;
-        public string cargo;
-        public bool status;
-        public DateTime contratacao;
         public DateTime nascimento;
+        public DateTime contratacao;
 
         public void cadastrarEstrategico()
         {
@@ -32,6 +32,9 @@ namespace Estrategico
             senha = Console.ReadLine();
             Console.WriteLine("Digite seu Cpf");
             cpf = Console.ReadLine();
+            Console.WriteLine("Digite sua Data de Nascimento (aaaa-mm-dd)");
+            nascimento = DateTime.Parse(Console.ReadLine());
+            contratacao = DateTime.Now;
             Console.WriteLine("Digite seus anos de experiência");
             experiencia = int.Parse(Console.ReadLine());
 
@@ -52,7 +55,15 @@ namespace Estrategico
                 Console.WriteLine("Ano de experiência inválido.");
                 return;
             }
-            conn.cadEstrategico(email, senha, cpf, experiencia, salario);
+
+            Console.WriteLine("Digite seu Estado:");
+            estado = Console.ReadLine();
+            Console.WriteLine("Digite sua Cidade:");
+            cidade = Console.ReadLine();
+            Console.WriteLine("Digite sua Rua:");
+            rua = Console.ReadLine();
+
+            conn.cadEstrategico(email, senha, cpf, experiencia, salario, estado, cidade, rua, nascimento, contratacao);
             Console.WriteLine("Cadastrado com sucesso!");
         }
 
