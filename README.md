@@ -7,3 +7,12 @@ Projeto PCP
 3. Se criado outra Branch, use os comandos merge para unificarem.
 
 4. Ao commitar comente com outros membros sobre as alterações.
+
+Nome dos Integrantes:
+Eduardo Oliveira 
+
+Pedro Rodrigues
+
+Luiz Eduardo 
+
+Yasmin 
