@@ -71,7 +71,7 @@ create table funcao_op (
 );
 
 create table endereco_estrategicos (
-  cod_endereço_es int primary key not null auto_increment,
+  cod_endereco_es int primary key not null auto_increment,
   cod_es int not null unique,
   estado_es varchar(100) not null,
   cidade_es varchar(100) not null,
