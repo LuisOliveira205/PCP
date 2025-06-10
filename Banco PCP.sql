@@ -70,7 +70,7 @@ create table funcao_op (
   foreign key (cod_op) references operacionais(cod_op)  
 );
 
-create table endereço_estrategicos (
+create table endereco_estrategicos (
   cod_endereço_es int primary key not null auto_increment,
   cod_es int not null unique,
   estado_es varchar(100) not null,
