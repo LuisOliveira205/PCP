@@ -7,7 +7,7 @@ create table estrategicos (
   email_es varchar(100),
   senha_es varchar(50),
   cpf_es char(14),
-  salario_es decimal(5,3) not null check(sal_es > 0),
+  salario_es decimal(5,3) not null check(salario_es > 0),
   experiencia_es int not null,
   nascimento_es date,
   contratacao_es date not null
@@ -19,7 +19,7 @@ create table taticos (
   email_ta varchar(100),
   senha_ta varchar(50),
   cpf_ta char(14),
-  salario_ta decimal(5,3) not null check(sal_es > 0),
+  salario_ta decimal(5,3) not null check(salario_es > 0),
   experiencia_ta int not null,
   nascimento_ta date,
   contratacao_ta date not null
@@ -31,7 +31,7 @@ create table operacionais (
   email_op varchar(100),
   senha_op varchar(50),
   cpf_op char(14),
-  salario_op decimal(5,3) not null check(sal_es > 0),
+  salario_op decimal(5,3) not null check(salario_es > 0),
   experiencia_op int not null,
   nascimento_op date,
   contratacao_op date not null
