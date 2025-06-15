@@ -1,36 +1,28 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using BancoPCP;
 using Estrategico;
 using Tatico;
 using Operacional;
 
 namespace Sistema
 {
-    internal class Program
+    class Sistema
     {
         static void Main(string[] args)
         {
-            bool continuar = true;
+            Console.WriteLine("Sistema PCP");
 
-            while (continuar)
+            while (true)
             {
-                Console.Clear();
-                Console.WriteLine("=== SISTEMA PCP ===");
-                Console.WriteLine("Escolha o nível de atuação:");
+                Console.WriteLine("\nSelecione o tipo de usuário:");
                 Console.WriteLine("1 - Estratégico");
                 Console.WriteLine("2 - Tático");
                 Console.WriteLine("3 - Operacional");
                 Console.WriteLine("0 - Sair");
                 Console.Write("Opção: ");
 
-                string opcaoNivel = Console.ReadLine();
+                string opcao = Console.ReadLine();
 
-                switch (opcaoNivel)
+                switch (opcao)
                 {
                     case "1":
                         MenuEstrategico();
@@ -42,262 +34,205 @@ namespace Sistema
                         MenuOperacional();
                         break;
                     case "0":
-                        continuar = false;
-                        break;
+                        Console.WriteLine("Saindo do sistema...");
+                        return;
                     default:
-                        Console.WriteLine("Opção inválida.");
+                        Console.WriteLine("Opção inválida!");
                         break;
-                }
-
-                if (continuar)
-                {
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
                 }
             }
         }
 
         static void MenuEstrategico()
         {
-            Estrategico.Estrategico est = new Estrategico.Estrategico();
-            bool logado = false;
+            Estrategico.Estrategico estrategico = new Estrategico.Estrategico();
 
-            Console.Clear();
-            Console.WriteLine("=== Módulo Estratégico ===");
-            Console.WriteLine("1 - Cadastrar");
-            Console.WriteLine("2 - Login");
-            Console.Write("Escolha: ");
-            string escolha = Console.ReadLine();
-
-            switch (escolha)
+            while (true)
             {
-                case "1":
-                    est.cadastrarEstrategico();
-                    break;
-                case "2":
-                    est.loginEstrategia();
-                    logado = true;
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida.");
-                    return;
-            }
-
-            if (!logado)
-            {
-                Console.WriteLine("É necessário fazer login para acessar as opções.");
-                return;
-            }
-
-            bool continuar = true;
-            while (continuar)
-            {
-                Console.Clear();
-                Console.WriteLine("=== Ações Estratégicas ===");
-                Console.WriteLine("1 - Definir Objetivos");
-                Console.WriteLine("2 - Definir Estratégias");
-                Console.WriteLine("3 - Recursos da Empresa");
-                Console.WriteLine("4 - Portfólio de Produtos");
-                Console.WriteLine("5 - Local de Produção");
-                Console.WriteLine("6 - Visualizar Informações Operacionais");
-                Console.WriteLine("0 - Voltar");
-                Console.Write("Escolha: ");
-                escolha = Console.ReadLine();
-
-                switch (escolha)
+                Console.WriteLine("\nMENU ESTRATÉGICO");
+                if (!estrategico.login)
                 {
-                    case "1":
-                        est.objetivoEmpresa("");
-                        break;
-                    case "2":
-                        est.estrategiaEmpresa("");
-                        break;
-                    case "3":
-                        est.recursosEmpresa("", 0);
-                        break;
-                    case "4":
-                        est.portifolioProdutos("");
-                        break;
-                    case "5":
-                        est.localProducao("");
-                        break;
-                    case "6":
-                        est.visualizarInfoOperacional();
-                        break;
-                    case "0":
-                        continuar = false;
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida.");
-                        break;
+                    Console.WriteLine("1 - Cadastrar");
+                    Console.WriteLine("2 - Login");
+                    Console.WriteLine("0 - Voltar");
                 }
-
-                if (continuar && escolha != "0")
+                else
                 {
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.WriteLine("3 - Definir Objetivos da Empresa");
+                    Console.WriteLine("4 - Definir Estratégia da Empresa");
+                    Console.WriteLine("5 - Definir Recursos da Empresa");
+                    Console.WriteLine("6 - Definir Portfólio de Produtos");
+                    Console.WriteLine("7 - Definir Local de Produção");
+                    Console.WriteLine("8 - Visualizar Informações Operacionais");
+                    Console.WriteLine("9 - Logout");
+                }
+                Console.Write("Opção: ");
+
+                string opcao = Console.ReadLine();
+
+                switch (opcao)
+                {
+                    case "1" when !estrategico.login:
+                        estrategico.cadastrarEstrategico();
+                        break;
+                    case "2" when !estrategico.login:
+                        estrategico.loginEstrategia();
+                        break;
+                    case "3" when estrategico.login:
+                        estrategico.objetivoempresa();
+                        break;
+                    case "4" when estrategico.login:
+                        estrategico.estrategiaempresa();
+                        break;
+                    case "5" when estrategico.login:
+                        estrategico.recursosempresa();
+                        break;
+                    case "6" when estrategico.login:
+                        estrategico.portifolioprodutos();
+                        break;
+                    case "7" when estrategico.login:
+                        estrategico.localproducao();
+                        break;
+                    case "8" when estrategico.login:
+                        estrategico.visualizarinfooperacional();
+                        break;
+                    case "9" when estrategico.login:
+                        estrategico.login = false;
+                        Console.WriteLine("Logout realizado com sucesso!");
+                        return;
+                    case "0" when !estrategico.login:
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida ou não permitida no estado atual!");
+                        break;
                 }
             }
         }
 
         static void MenuTatico()
         {
-            Tatico.Tatico tat = new Tatico.Tatico();
-            bool logado = false;
+            Tatico.Tatico tatico = new Tatico.Tatico();
 
-            Console.Clear();
-            Console.WriteLine("=== Módulo Tático ===");
-            Console.WriteLine("1 - Cadastrar");
-            Console.WriteLine("2 - Login");
-            Console.Write("Escolha: ");
-            string escolha = Console.ReadLine();
-
-            switch (escolha)
+            while (true)
             {
-                case "1":
-                    tat.cadastrarTatico();
-                    break;
-                case "2":
-                    tat.loginTatico();
-                    logado = true;
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida.");
-                    return;
-            }
-
-            if (!logado)
-            {
-                Console.WriteLine("É necessário fazer login para acessar as opções.");
-                return;
-            }
-
-            bool continuar = true;
-            while (continuar)
-            {
-                Console.Clear();
-                Console.WriteLine("=== Ações Táticas ===");
-                Console.WriteLine("1 - Plano da Empresa");
-                Console.WriteLine("2 - Lotes e Cronograma");
-                Console.WriteLine("3 - Ajuste de Capacidade");
-                Console.WriteLine("4 - Desvios");
-                Console.WriteLine("5 - Visualizar Informações Operacionais");
-                Console.WriteLine("0 - Voltar");
-                Console.Write("Escolha: ");
-                escolha = Console.ReadLine();
-
-                switch (escolha)
+                Console.WriteLine("\nMENU TÁTICO");
+                if (!tatico.login)
                 {
-                    case "1":
-                        tat.planoEmpresa("");
-                        break;
-                    case "2":
-                        tat.loteCronogramaEmpresa("", "");
-                        break;
-                    case "3":
-                        tat.capacidadeEmpresa("");
-                        break;
-                    case "4":
-                        tat.desviosEmpresa("");
-                        break;
-                    case "5":
-                        tat.visualizarInfoOperacional();
-                        break;
-                    case "0":
-                        continuar = false;
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida.");
-                        break;
+                    Console.WriteLine("1 - Cadastrar");
+                    Console.WriteLine("2 - Login");
+                    Console.WriteLine("0 - Voltar");
                 }
-
-                if (continuar && escolha != "0")
+                else
                 {
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.WriteLine("3 - Definir Plano de Produção");
+                    Console.WriteLine("4 - Definir Lotes e Cronograma");
+                    Console.WriteLine("5 - Definir Ajustes de Capacidade");
+                    Console.WriteLine("6 - Registrar Desvios");
+                    Console.WriteLine("7 - Visualizar Informações Operacionais");
+                    Console.WriteLine("8 - Logout");
+                }
+                Console.Write("Opção: ");
+
+                string opcao = Console.ReadLine();
+
+                switch (opcao)
+                {
+                    case "1" when !tatico.login:
+                        tatico.cadastrarTatico();
+                        break;
+                    case "2" when !tatico.login:
+                        tatico.loginTatico();
+                        break;
+                    case "3" when tatico.login:
+                        tatico.planoEmpresa();
+                        break;
+                    case "4" when tatico.login:
+                        tatico.loteCronogramaEmpresa();
+                        break;
+                    case "5" when tatico.login:
+                        tatico.capacidadeEmpresa();
+                        break;
+                    case "6" when tatico.login:
+                        tatico.desviosEmpresa();
+                        break;
+                    case "7" when tatico.login:
+                        tatico.visualizarInfoOperacional();
+                        break;
+                    case "8" when tatico.login:
+                        tatico.login = false;
+                        Console.WriteLine("Logout realizado com sucesso!");
+                        return;
+                    case "0" when !tatico.login:
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida ou não permitida no estado atual!");
+                        break;
                 }
             }
         }
 
         static void MenuOperacional()
         {
-            Operacional.Operacional op = new Operacional.Operacional();
-            bool logado = false;
+            Operacional.Operacional operacional = new Operacional.Operacional();
 
-            Console.Clear();
-            Console.WriteLine("=== Módulo Operacional ===");
-            Console.WriteLine("1 - Cadastrar");
-            Console.WriteLine("2 - Login");
-            Console.Write("Escolha: ");
-            string escolha = Console.ReadLine();
-
-            switch (escolha)
+            while (true)
             {
-                case "1":
-                    op.cadastrarOperacional();
-                    break;
-                case "2":
-                    op.loginOperacional();
-                    logado = true;
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida.");
-                    return;
-            }
-
-            if (!logado)
-            {
-                Console.WriteLine("É necessário fazer login para acessar as opções.");
-                return;
-            }
-
-            bool continuar = true;
-            while (continuar)
-            {
-                Console.Clear();
-                Console.WriteLine("=== Ações Operacionais ===");
-                Console.WriteLine("1 - Executar Ordem");
-                Console.WriteLine("2 - Reportar Progresso");
-                Console.WriteLine("3 - Gerir Mão de Obra");
-                Console.WriteLine("4 - Ajustes/Correções");
-                Console.WriteLine("5 - Visualizar Informações Estratégicas");
-                Console.WriteLine("6 - Visualizar Informações Táticas");
-                Console.WriteLine("0 - Voltar");
-                Console.Write("Escolha: ");
-                escolha = Console.ReadLine();
-
-                switch (escolha)
+                Console.WriteLine("\nMENU OPERACIONAL");
+                if (!operacional.login)
                 {
-                    case "1":
-                        op.executarOrdem("");
-                        break;
-                    case "2":
-                        op.reportarProgresso("");
-                        break;
-                    case "3":
-                        op.gerirMaoDeObra("");
-                        break;
-                    case "4":
-                        op.ajustesCorrecao("");
-                        break;
-                    case "5":
-                        op.visualizarInfoEstrategica();
-                        break;
-                    case "6":
-                        op.visualizarInfoTatica();
-                        break;
-                    case "0":
-                        continuar = false;
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida.");
-                        break;
+                    Console.WriteLine("1 - Cadastrar");
+                    Console.WriteLine("2 - Login");
+                    Console.WriteLine("0 - Voltar");
                 }
-
-                if (continuar && escolha != "0")
+                else
                 {
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.WriteLine("3 - Executar Ordem de Produção");
+                    Console.WriteLine("4 - Reportar Progresso");
+                    Console.WriteLine("5 - Gerenciar Mão de Obra");
+                    Console.WriteLine("6 - Registrar Ajustes e Correções");
+                    Console.WriteLine("7 - Visualizar Informações Estratégicas");
+                    Console.WriteLine("8 - Visualizar Informações Táticas");
+                    Console.WriteLine("9 - Logout");
+                }
+                Console.Write("Opção: ");
+
+                string opcao = Console.ReadLine();
+
+                switch (opcao)
+                {
+                    case "1" when !operacional.login:
+                        operacional.cadastrarOperacional();
+                        break;
+                    case "2" when !operacional.login:
+                        operacional.loginOperacional();
+                        break;
+                    case "3" when operacional.login:
+                        operacional.executarOrdem();
+                        break;
+                    case "4" when operacional.login:
+                        operacional.reportarProgresso();
+                        break;
+                    case "5" when operacional.login:
+                        operacional.gerirMaoDeObra();
+                        break;
+                    case "6" when operacional.login:
+                        operacional.ajustesCorrecao();
+                        break;
+                    case "7" when operacional.login:
+                        operacional.visualizarInfoEstrategica();
+                        break;
+                    case "8" when operacional.login:
+                        operacional.visualizarInfoTatica();
+                        break;
+                    case "9" when operacional.login:
+                        operacional.login = false;
+                        Console.WriteLine("Logout realizado com sucesso!");
+                        return;
+                    case "0" when !operacional.login:
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida ou não permitida no estado atual!");
+                        break;
                 }
             }
         }
