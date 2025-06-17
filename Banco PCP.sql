@@ -7,7 +7,7 @@ create table estrategicos (
   email_es varchar(100) not null unique,
   senha_es varchar(50) not null,
   cpf_es char(14) not null unique,
-  salario_es decimal(5,3) not null check(salario_es > 0),
+  salario_es int not null check(salario_es > 0),
   experiencia_es int not null,
   nascimento_es date not null,
   contratacao_es date not null
@@ -19,7 +19,7 @@ create table taticos (
   email_ta varchar(100) not null unique,
   senha_ta varchar(50) not null,
   cpf_ta char(14) not null unique,
-  salario_ta decimal(5,3) not null check(salario_ta > 0),  
+  salario_ta int not null check(salario_ta > 0),  
   experiencia_ta int not null,
   nascimento_ta date not null,
   contratacao_ta date not null
@@ -31,7 +31,7 @@ create table operacionais (
   email_op varchar(100) not null unique,
   senha_op varchar(50) not null,
   cpf_op char(14) not null unique,
-  salario_op decimal(5,3) not null check(salario_op > 0),  
+  salario_op int not null check(salario_op > 0),  
   experiencia_op int not null,
   nascimento_op date not null,
   contratacao_op date not null
@@ -69,3 +69,12 @@ create table funcao_op (
   ajustes_op varchar(500),
   foreign key (cod_op) references operacionais(cod_op)  
 );
+
+drop table estrategicos;
+drop table funcao_es;
+
+drop table taticos;
+drop table funcao_ta;
+
+drop table operacionais;
+drop table funcao_op;
